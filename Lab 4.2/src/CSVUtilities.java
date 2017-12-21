@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException; 
+import java.io.IOException;
 import java.util.ArrayList; 
 import java.util.List;
 
@@ -18,8 +18,20 @@ public class CSVUtilities {
 		try 
 		{
 			reader = new FileReader(csv);
-
 			filein = new BufferedReader(reader);
+			
+			try
+			{
+				String line = filein.readLine(); 
+			
+				while (line != null)
+				{ 
+					String[] attributes = line.split(",");
+					line = filein.readLine();
+					numColumns = attributes.length;
+					
+				}
+			}
 		}
 
 		catch (FileNotFoundException fnfe) 
@@ -34,7 +46,7 @@ public class CSVUtilities {
 	{
 		ArrayList<String> headers = new ArrayList<String>();
 		
-		headers.add(e);
+		headers.add();
 		return headers;
 	}
 	

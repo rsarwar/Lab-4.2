@@ -13,10 +13,12 @@ public class Runner {
 		File file = new File("Directory_Of_Homeless_Population_By_Year.csv");
 		CSVUtilities data = new CSVUtilities(file);
 		
-		data.getColumnHeaders();
+		System.out.print(data);
+		//toString method!!
+		/*data.getColumnHeaders();
 		data.getDataString(1);
 		data.getDataInt(2);
-		data.getDataDouble(2);
+		data.getDataDouble(2);*/
 	}
 
 }

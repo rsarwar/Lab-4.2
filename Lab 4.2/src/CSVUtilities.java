@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList; 
 import java.util.List;
 
@@ -101,5 +102,22 @@ public class CSVUtilities {
 			x = x+numColumns;
 		}
 		return dataDouble;
+	}
+	public void writeCSV(File file)
+	{
+		PrintWriter pw = null;
+		try
+		{
+			pw = new PrintWriter(new File("results.csv"));
+		}
+		catch(FileNotFoundException e)
+		{
+			System.err.println(e);
+		}
+		StringBuilder sb = new StringBuilder();
+		//sb.append("Year, Area, Homeless Estimates\n");
+		//sb.append(c)
+		pw.write(sb.toString());
+		pw.close();
 	}
 }
